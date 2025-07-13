@@ -6,7 +6,7 @@ export const Work = () => {
     {
       title: "Web Developer Intern",
       company: "SkillCraft Technology",
-      duration: "December 2024 - Present",
+      duration: "December 2024 - December 2024",
       responsibilities: [
         "Selected for a hands-on Web Development Internship program, focusing on building responsive and user-friendly web applications while gaining valuable industry experience.",
       ],
