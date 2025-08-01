@@ -3,6 +3,8 @@ import { Container, Row, Col } from "react-bootstrap";
 import projImg1 from "../assets/img/project-img1.png";
 import projImg2 from "../assets/img/project-img2.png";
 import projImg3 from "../assets/img/project-img3.png";
+import projImg4 from "../assets/img/project-img4.png";
+import projImg5 from "../assets/img/project-img5.png";
 
 export const Projects = () => {
   const projects = [
@@ -26,6 +28,20 @@ export const Projects = () => {
         "A platform for user registration, login, posting, liking, commenting, messaging, and profile creation. Scalable architecture and intuitive design.",
       imgUrl: projImg3,
       tags: ["React", "MongoDB", "Tailwind", "JWT-Auth"],
+    },
+    {
+      title: "LEARNING MANAGEMENT SYSTEM",
+      description:
+        "This is a modern e-learning web application built with Next.js and React. The platform features a homepage with articles and a responsive navigation bar.",
+      imgUrl: projImg5,
+      tags: ["React", "Next Js", "Tailwind", "TypeScript"],
+    },
+    {
+      title: "E-COMMERCE WEBSITE",
+      description:
+        "It is a modern, full-stack e-commerce web application designed to deliver a seamless shopping experience for users and robust management tools for administrators.",
+      imgUrl: projImg4,
+      tags: ["React", "MongoDB", "Node Js", "Tailwind", "JWT-Auth"],
     },
   ];
 
