@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import { FaGithub } from "react-icons/fa";
 import projImg1 from "../assets/img/project-img1.png";
 import projImg2 from "../assets/img/project-img2.png";
 import projImg3 from "../assets/img/project-img3.png";
@@ -14,6 +15,7 @@ export const Projects = () => {
         "This provides a smooth and dynamic user experience with two modes of gameplay: User vs User and User vs Computer, which uses the Minimax algorithm.",
       imgUrl: projImg1,
       tags: ["HTML", "CSS", "JavaScript"],
+      githubUrl: "https://github.com/Soumi-Code/Tic-Tac-Toe",
     },
     {
       title: "TO DO LIST",
@@ -21,6 +23,7 @@ export const Projects = () => {
         "A simple, interactive task management tool to add, edit, mark, and delete tasks, while also showing data like creation and completion dates.",
       imgUrl: projImg2,
       tags: ["React", "Tailwind"],
+      githubUrl: "https://github.com/Soumi-Code/To-Do-Web-App",
     },
     {
       title: "SOCIAL MEDIA APPLICATION",
@@ -28,6 +31,7 @@ export const Projects = () => {
         "A platform for user registration, login, posting, liking, commenting, messaging, and profile creation. Scalable architecture and intuitive design.",
       imgUrl: projImg3,
       tags: ["React", "MongoDB", "Tailwind", "JWT-Auth"],
+      githubUrl: "https://github.com/Soumi-Code/ZOOMORA",
     },
     {
       title: "LEARNING MANAGEMENT SYSTEM",
@@ -35,6 +39,7 @@ export const Projects = () => {
         "This is a modern e-learning web application built with Next.js and React. The platform features a homepage with articles and a responsive navigation bar.",
       imgUrl: projImg5,
       tags: ["React", "Next Js", "Tailwind", "TypeScript"],
+      githubUrl: "https://github.com/Soumi-Code/e-learning",
     },
     {
       title: "E-COMMERCE WEBSITE",
@@ -42,6 +47,7 @@ export const Projects = () => {
         "It is a modern, full-stack e-commerce web application designed to deliver a seamless shopping experience for users and robust management tools for administrators.",
       imgUrl: projImg4,
       tags: ["React", "MongoDB", "Node Js", "Tailwind", "JWT-Auth"],
+      githubUrl: "https://github.com/Soumi-Code/E-Commerce",
     },
   ];
 
@@ -61,6 +67,16 @@ export const Projects = () => {
           {projects.map((project, index) => (
             <Col xs={12} sm={6} lg={4} key={index} className="mb-4">
               <div className="proj-imgbx">
+                {/* GitHub Icon Link */}
+                <a
+                  href={project.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="github-link"
+                >
+                  <FaGithub />
+                </a>
+
                 <img src={project.imgUrl} alt={project.title} />
                 <div className="proj-txtx">
                   <h4>{project.title}</h4>

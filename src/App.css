@@ -397,7 +397,7 @@
 .project h2 {
   font-size: 2.5rem;
   color: #ffffff;
-  text-align:center;
+  text-align: center;
   margin-bottom: 20px;
 }
 
@@ -418,6 +418,7 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+  position: relative;
 }
 
 .proj-imgbx:hover {
@@ -430,7 +431,9 @@
   height: 200px;
   object-fit: cover;
   border-radius: 10px;
+  margin-top: 20px; /* shift image slightly down */
 }
+
 .proj-txtx {
   margin-top: 15px;
   display: flex;
@@ -469,6 +472,22 @@
   font-weight: 500;
 }
 
+.github-link {
+  position: absolute;
+  top: 4px;
+  right: 12px;
+  z-index: 2;
+  color: #ffffff;
+  font-size: 1.7rem;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.9), 0 0 8px rgba(0, 0, 0, 0.5);
+  transition: transform 0.2s ease;
+}
+
+.github-link:hover {
+  transform: scale(1.1);
+}
+
+/* Responsive Adjustments */
 @media (max-width: 992px) {
   .proj-imgbx img {
     height: 180px;
@@ -498,9 +517,13 @@
     font-size: 0.75rem;
     padding: 4px 8px;
   }
+
+  .github-link {
+    font-size: 1.4rem;
+    top: 10px;
+    right: 10px;
+  }
 }
-
-
 
   
   /************ Contact Css ************/
@@ -613,7 +636,7 @@
 .timeline {
   position: relative;
   width: 100%;
-  max-width: 1300px;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 40px 0;
 }
@@ -633,7 +656,7 @@
 .timeline-item {
   position: relative;
   width: 50%;
-  padding: 20px 40px;
+  padding: 20px 30px;
   box-sizing: border-box;
   display: flex;
   justify-content: flex-end;
@@ -656,12 +679,15 @@
 .timeline-content {
   background: linear-gradient(135deg, #1d1d40, #2e2e60);
   border-radius: 20px;
-  padding: 20px 40px;
+  padding: 20px 30px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
   width: 100%;
-  max-width: 500px;
+  max-width: 520px;
   z-index: 1;
   transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+  word-break: normal;
+  overflow-wrap: anywhere;
+  white-space: normal;
 }
 
 .timeline-content:hover {
@@ -698,6 +724,7 @@
   display: flex;
   align-items: flex-start;
   gap: 20px;
+  flex-wrap: nowrap;
 }
 
 .work-logo {
@@ -711,12 +738,14 @@
 
 .work-details {
   flex: 1;
+  min-width: 0;
 }
 
 .work-title {
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 5px;
+  word-break: break-word;
 }
 
 .work-company {
@@ -724,48 +753,67 @@
   font-weight: 500;
   color: #b8b8b8;
   margin-bottom: 5px;
+  word-break: break-word;
 }
 
 .work-duration {
   font-size: 1rem;
   font-weight: 400;
   color: #d1d1d1;
-  margin-bottom: 10px;
+  margin-bottom: 0;
   display: block;
+  word-break: break-word;
 }
 
 .work-responsibilities {
   list-style-type: disc;
   padding-left: 20px;
   color: #e4e4e4;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 .work-responsibilities li {
   font-size: 1rem;
   line-height: 1.5;
+  word-break: break-word;
 }
 
-/* Keep the alternating layout on all screens */
+/* ✅ Mobile Layout Adjustments */
 @media (max-width: 768px) {
-  .timeline-item {
-    width: 50%;
-    padding: 15px 20px;
+  .timeline {
+    padding: 20px 0;
+  }
+
+  .timeline-item,
+  .timeline-item.left,
+  .timeline-item.right {
+    width: 100%;
+    left: 0;
+    justify-content: center;
+    text-align: left;
+    flex-direction: row;
+    padding: 15px 10px;
+  }
+
+  .timeline-line,
+  .timeline-dot {
+    display: none;
   }
 
   .timeline-content {
-    padding: 15px 20px;
-    max-width: 100%;
+    max-width: 95%;
+    width: 100%;
+    padding: 18px 20px;
+    font-size: 0.95rem;
+    line-height: 1.5;
   }
 
-  .timeline-dot {
-    width: 16px;
-    height: 16px;
-    top: 30px;
-  }
-
-  .timeline-line {
-    width: 3px;
+  .work-header {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 0;
   }
 
   .work-logo {
@@ -773,41 +821,54 @@
     height: 60px;
   }
 
+  .work-details {
+    flex: 1;
+  }
+
   .work-title {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
+    margin-bottom: 3px;
   }
 
   .work-company {
-    font-size: 1rem;
+    font-size: 0.95rem;
+    margin-bottom: 3px;
   }
 
   .work-duration {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+  }
+
+  .work-responsibilities {
+    margin-top: 20px;
+    padding-left: 18px;
+    font-size: 0.85rem;
   }
 
   .work-responsibilities li {
-    font-size: 0.9rem;
+    line-height: 1.4;
   }
 }
 
 @media (max-width: 480px) {
   .timeline-content {
-    padding: 12px 16px;
+    max-width: 96%;
+    padding: 16px 18px;
   }
 
   .work-title {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 
   .work-company {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
   }
 
   .work-duration {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
   }
 
   .work-responsibilities li {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
   }
 }
